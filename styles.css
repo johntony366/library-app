@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 html {
     font-size: 10px;
+    font-family: "Roboto";
 }
 
 body {
     margin: 0;
     font-size: 1.6rem;
+    background-color: rgb(198, 255, 198);
 }
 
 .container {
@@ -29,9 +32,10 @@ body {
 }
 
 .header .addBookBtn {
-    font-family: "Roboto";
-    font-weight: bold;
-    font-size: 2rem;
+    font-family: "Pacifico";
+    font-size: larger;
+    background-color: rgb(254, 255, 194);
+    border-radius: 1rem;
 }
 
 /*  */
@@ -44,9 +48,11 @@ body {
 }
 
 .content .books {
-    height: 90%;
+    height: 95%;
     width: 90%;
     border: 2px solid lightslategrey;
+    background-color: rgb(223, 250, 255);
+
     border-radius: 1rem;
 
     padding: 1rem;
@@ -61,7 +67,7 @@ body {
 /* Book */
 
 .book {
-    background-color: rgb(187, 255, 255);
+    background-color: burlywood;
     width: 200px;
     height: min-content;
     padding: 1rem;
@@ -90,11 +96,11 @@ body {
 }
 
 .book.read-checked {
-    border-left: 2px solid green;
+    border-left: 4px solid green;
 }
 
 .book.read-unchecked {
-    border-left: 2px solid yellow;
+    border-left: 4px solid yellow;
 }
 
 /* Footer */
@@ -133,4 +139,73 @@ body {
 
 .overlay.active {
     display: block;
+}
+
+/* Add Book modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(198, 255, 198);
+    z-index: 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-family: "Itim";
+    font-size: larger;
+
+    width: 300px;
+}
+
+.modal h3 {
+    font-family: "Pacifico";
+}
+
+.modal ul {
+    list-style-type: none;
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    padding-left: 0;
+}
+
+.modal li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.modal input {
+    border-radius: 1rem;
+    padding: 0 1rem;
+}
+
+.modal .read {
+    justify-self: center;
+    gap: 1rem;
+}
+
+.modal .submit {
+    justify-self: center;
+}
+
+.modal button {
+    font-family: "Pacifico";
+    font-size: large;
+    background-color: rgb(254, 255, 194);
+    border-radius: 1rem;
+}
+
+.modal button:hover {
+    background-color: rgb(253, 255, 131);
+}
+
+.modal button:active {
+    background-color: rgb(251, 255, 0);
+}
+
+.modal.active {
+    display: block;
+    transform: translate(-50%, -50%);
 }

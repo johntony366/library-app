@@ -20,12 +20,35 @@
         </main>
         <footer class="footer">
             <p>Copyright © 2022 johntony366</p>
-            <div class="gh-avatar"></div>
+            <a href="https://github.com/johntony366">
+                <div class="gh-avatar"></div>
+            </a>
         </footer>
     </div>
-    <div class="addBookModal">
-        <form class="add-book-form">
-            <h3></h3>
+    <div class="modal" id="addBookModal">
+        <form class="form" id="addBookForm">
+            <h3>Add book to Library</h3>
+            <ul class="form-entries">
+                <li>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title">
+                </li>
+                <li>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author">
+                </li>
+                <li>
+                    <label for="pages">Pages</label>
+                    <input type="number" min="0" id="pages" name="pages">
+                </li>
+                <li class="read">
+                    <label for="read">Finished reading</label>
+                    <input type="checkbox" id="read" name="read">
+                </li>
+                <li class="submit">
+                    <button type="submit" id="submitBookForm">Submit</button>
+                </li>
+            </ul>
         </form>
     </div>
     <div class="overlay"></div>

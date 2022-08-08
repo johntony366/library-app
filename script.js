@@ -1,23 +1,11 @@
 const bookCards = document.querySelector(".books");
-const addBookBtn = document.querySelector('.addBookBtn');
-const overlay = document.querySelector('.overlay');
-const addBookModal = document.querySelector('.addBookModal';)
-// const addBookForm = document.querySelector();
+const addBookBtn = document.querySelector(".addBookBtn");
+const overlay = document.querySelector(".overlay");
+const addBookModal = document.querySelector("#addBookModal");
+const addBookForm = document.querySelector("#addBookForm");
+const submitBookFormBtn = document.querySelector("#submitBookForm");
 
-const books = [
-    {
-        title: "Book1",
-        author: "me",
-        pages: 500,
-        read: true,
-    },
-    {
-        title: "Book2",
-        author: "you",
-        pages: 320,
-        read: false,
-    }
-];
+const books = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -83,12 +71,11 @@ function createBookCard(book, index) {
     bookCard.appendChild(createReadElement(book, bookCard));
 
     const delButton = createBookElement("button", "X", "book-delete");
-    delButton.addEventListener('click', () => {
+    delButton.addEventListener("click", () => {
         books.splice(index, 1);
         renderBooks();
-    })
+    });
     bookCard.appendChild(delButton);
-
 
     bookCards.insertAdjacentElement("afterbegin", bookCard);
 }
@@ -102,11 +89,33 @@ function renderBooks() {
 
 overlay.addEventListener("click", () => {
     overlay.classList.remove("active");
+    addBookModal.classList.remove("active");
     return;
 });
 
-addBookBtn.addEventListener('click', bringUpForm);
-function bringUpForm() {
-    overlay.classList.add('active');
+submitBookFormBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    overlay.classList.remove("active");
+    addBookModal.classList.remove("active");
 
+    const title = document.querySelector("#addBookForm #title");
+    const author = document.querySelector("#addBookForm #author");
+    const pages = document.querySelector("#addBookForm #pages");
+    const read = document.querySelector("#addBookForm #read");
+
+    const newBook = new Book(
+        title.value,
+        author.value,
+        pages.value,
+        read.checked
+    );
+    books.push(newBook);
+    renderBooks();
+});
+
+addBookBtn.addEventListener("click", bringUpForm);
+function bringUpForm() {
+    addBookForm.reset();
+    overlay.classList.add("active");
+    addBookModal.classList.add("active");
 }
