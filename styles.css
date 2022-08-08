@@ -7,9 +7,11 @@ html {
 body {
     margin: 0;
     font-size: 1.6rem;
+}
+
+.container {
     height: 100vh;
     width: 100vw;
-
     display: grid;
     grid-template-rows: 1fr 10fr 1fr;
 }
@@ -31,6 +33,8 @@ body {
     font-weight: bold;
     font-size: 2rem;
 }
+
+/*  */
 
 /* Content */
 .content {
@@ -109,8 +113,24 @@ body {
     width: 3rem;
     height: 3rem;
     border-radius: 3rem;
-    content: '';
+    content: "";
     background-image: url(https://github.com/johntony366.png);
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+/* Overlay */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay.active {
+    display: block;
 }

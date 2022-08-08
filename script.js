@@ -1,4 +1,8 @@
 const bookCards = document.querySelector(".books");
+const addBookBtn = document.querySelector('.addBookBtn');
+const overlay = document.querySelector('.overlay');
+const addBookModal = document.querySelector('.addBookModal';)
+// const addBookForm = document.querySelector();
 
 const books = [
     {
@@ -96,4 +100,13 @@ function renderBooks() {
     });
 }
 
-renderBooks();
+overlay.addEventListener("click", () => {
+    overlay.classList.remove("active");
+    return;
+});
+
+addBookBtn.addEventListener('click', bringUpForm);
+function bringUpForm() {
+    overlay.classList.add('active');
+
+}
