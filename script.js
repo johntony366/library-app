@@ -77,7 +77,7 @@ function createBookCard(book, index) {
     });
     bookCard.appendChild(delButton);
 
-    bookCards.insertAdjacentElement("afterbegin", bookCard);
+    bookCards.appendChild(bookCard);
 }
 
 function renderBooks() {
