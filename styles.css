@@ -52,6 +52,7 @@ body {
     width: 90%;
     border: 2px solid lightslategrey;
     background-color: rgb(223, 250, 255);
+    align-content: flex-start;
 
     border-radius: 1rem;
 
